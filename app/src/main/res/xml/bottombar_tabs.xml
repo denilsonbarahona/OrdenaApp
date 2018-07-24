@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/nav_services"
+        icon="@drawable/ic_home"
+        title="Servicios"
+        activeColor="@color/colorAccent"
+        />
+    <tab
+        id="@+id/nav_tracking"
+        icon="@drawable/ic_pin"
+        title="Rastrear Pedido"
+        activeColor="@color/colorAccent"/>
+    <tab
+        id="@+id/nav_more"
+        icon="@drawable/ic_dots"
+        title="Otros"
+        activeColor="@color/colorAccent"
+        />
+</tabs>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="2dp"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:id="@+id/ng_image_in_folder"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="3dp"
+            android:layout_height="wrap_content">
+
+            <ToggleButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:textOff=""
+                android:id="@+id/ng_item_image_selected"
+                android:textOn=""
+                android:background="@drawable/toggle_background"/>
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

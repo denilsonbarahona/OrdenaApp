@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4290e6</color>
+    <color name="colorPrimaryDark">#2f67a4</color>
+    <color name="colorAccent">#ed6136</color>
+    <color name="rippler">#3cd8d6d6</color>
+    <color name="bg_comments">#ffffff</color>
+    <color name="fab_color_shadow">#44000000</color>
+    <color name="colorAccentBar">#FEFEFE</color>
+    <color name="fab_color_pressed">#4ea4f0</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="disable">#d8d8d8</color>
+    <color name="endprocess">#2fa666</color>
+    <color name="WhiteColor">#fff</color>
+    <color name="select_list">#f5f5f5</color>
+</resources>

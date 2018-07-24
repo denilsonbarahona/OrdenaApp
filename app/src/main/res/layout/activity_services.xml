@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/ng_btn_express_services"
+                android:layout_width="150dp"
+                android:text="Express delivery"
+                android:layout_height="70dp" />
+
+            <Button
+                android:id="@+id/ng_btn_atm_services"
+                android:layout_width="150dp"
+                android:text="ATM Movil"
+                android:layout_height="70dp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/ng_btn_schedule_services"
+            android:layout_width="150dp"
+            android:text="Entregas Programadas"
+            android:layout_height="70dp" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

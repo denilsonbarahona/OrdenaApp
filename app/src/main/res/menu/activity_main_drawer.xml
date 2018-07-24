@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_near"
+            android:icon="@drawable/ic_store"
+            android:title="Locales mas cercanos" />
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_shopping"
+            android:title="Ordenes" />
+        <item
+            android:id="@+id/nav_offer"
+            android:icon="@drawable/ic_local"
+            android:title="Promocion" />
+    </group>
+
+    <item android:title="Configuraciones">
+        <menu>
+            <item
+                android:id="@+id/nav_conf"
+                android:icon="@drawable/ic_settings"
+                android:title="Configuración" />
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help"
+                android:title="Ayuda" />
+        </menu>
+    </item>
+
+</menu>
