@@ -1,6 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <include layout="@layout/ng_toolbar"></include>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:paddingLeft="32dp"
+            android:paddingTop="30dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ng_first_state_dot"
+                    android:background="@drawable/ng_status_dot_disable"
+                    android:layout_height="15dp" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/ng_first_state_image"
+                    android:src="@drawable/ic_order_image"
+                    android:backgroundTint="@color/disable"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="45dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:id="@+id/ng_first_state_name"
+                        android:text="Pedido Realizado"
+                        android:textColor="@color/disable"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textSize="12sp"
+                        android:id="@+id/ng_first_state_description"
+                        android:textColor="@color/disable"
+                        android:text="Hemos recibido tu pedido."
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:id="@+id/ng_first_state_process"
+                android:orientation="vertical"
+                android:background="@color/disable"
+                android:layout_marginLeft="6dp"
+                android:layout_height="50dp"></LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ng_second_state_dot"
+                    android:background="@drawable/ng_status_dot_disable"
+                    android:layout_height="15dp" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/ng_second_state_image"
+                    android:src="@drawable/ic_approved_order"
+                    android:layout_marginLeft="15dp"
+                    android:backgroundTint="@color/disable"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="45dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:id="@+id/ng_second_state_name"
+                        android:text="Orden Confirmada"
+                        android:textColor="@color/disable"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:id="@+id/ng_second_state_description"
+                        android:textSize="12sp"
+                        android:textColor="@color/disable"
+                        android:text="Tu orden ha sido confirmada."
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="1dp"
+                android:background="@color/disable"
+                android:id="@+id/ng_second_state_process"
+                android:layout_marginLeft="6dp"
+                android:layout_height="50dp"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ng_third_state_dot"
+                    android:background="@drawable/ng_status_dot_disable"
+                    android:layout_height="15dp" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:id="@+id/ng_third_state_image"
+                    android:src="@drawable/ic_process_order"
+                    android:backgroundTint="@color/disable"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="45dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:id="@+id/ng_third_state_name"
+                        android:text="Realizando Pedido"
+                        android:textColor="@color/disable"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textSize="12sp"
+                        android:id="@+id/ng_third_state_description"
+                        android:textColor="@color/disable"
+                        android:text="Estamos realizando el pedido que quieres."
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:orientation="vertical"
+                android:background="@color/disable"
+                android:id="@+id/ng_third_state_process"
+                android:layout_marginLeft="6dp"
+                android:layout_height="50dp"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ng_fourth_state_dot"
+                    android:background="@drawable/ng_status_dot_disable"
+                    android:layout_height="15dp" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:src="@drawable/ic_delivery"
+                    android:id="@+id/ng_fourth_state_image"
+                    android:backgroundTint="@color/disable"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="45dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/ng_fourth_state_name"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:text="Realizando Entrega"
+                        android:textColor="@color/disable"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/ng_fourth_state_description"
+                        android:fontFamily="sans-serif"
+                        android:textSize="12sp"
+                        android:textColor="@color/disable"
+                        android:text="Estamos por hacerte la entrega de lo que nos has pedido."
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1dp"
+                android:orientation="vertical"
+                android:background="@color/disable"
+                android:id="@+id/ng_fourth_state_process"
+                android:layout_marginLeft="6dp"
+                android:layout_height="50dp"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/ng_fifth_state_dot"
+                    android:background="@drawable/ng_status_dot_disable"
+                    android:layout_height="15dp" />
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:src="@drawable/ic_finish_delivery"
+                    android:id="@+id/ng_fifth_state_image"
+                    android:backgroundTint="@color/disable"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="45dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:id="@+id/ng_fifth_state_name"
+                        android:fontFamily="sans-serif"
+                        android:textSize="14sp"
+                        android:text="Pedido Entregado"
+                        android:textColor="@color/disable"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textSize="12sp"
+                        android:id="@+id/ng_fifth_state_description"
+                        android:textColor="@color/disable"
+                        android:text="El pedido ya fue entregado."
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

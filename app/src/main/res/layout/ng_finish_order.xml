@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:id="@+id/ng_close"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/bg_comments"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif"
+            android:textSize="15sp"
+            android:id="@+id/ng_message"
+            android:text="" />
+<!--
+        <Button
+            android:layout_width="200dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:background="@color/bg_comments"
+            android:text="Rastrear Pedido"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="50dp" /> -->
+
+
+    </LinearLayout>
 
 </LinearLayout>

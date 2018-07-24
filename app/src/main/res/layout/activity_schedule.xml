@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <include layout="@layout/ng_toolbar"></include>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <!-- SubHeader de los pedidos-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        app:srcCompat="@drawable/ic_orden"
+                        android:layout_height="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="13dp"
+                        android:textStyle="bold"
+                        android:text="Agregar Artículos Al Pedido"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <!-- Separertor of Items -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:background="#d5d5d5"
+                    android:layout_height="1px"></LinearLayout>
+
+                <!-- Items to make the delivery -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:paddingTop="13dp"
+                        android:weightSum="1">
+
+
+                        <EditText
+                            android:id="@+id/ng_ItemName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:inputType="textMultiLine"
+                            android:layout_weight="0.5"
+                            android:hint="Que Te Traemos?"
+                            android:textSize="13sp"
+                            android:theme="@style/MainEditText" />
+
+                        <EditText
+                            android:id="@+id/ng_ItemQuantity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.3"
+                            android:hint="Cantidad"
+                            android:textSize="13sp"
+                            android:theme="@style/MainEditText" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Dirección de la compra"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ng_itemAddresPick"
+                        android:layout_width="match_parent"
+                        android:hint="Donde Lo Conseguimos?"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:inputType="textMultiLine"
+                        android:theme="@style/MainEditText" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="Notas de la compra"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ng_DeliveryNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:ems="10"
+                        android:textSize="13sp"
+                        android:hint="Que mas debemos saber?"
+                        android:inputType="textMultiLine"
+                        android:theme="@style/MainEditText" />
+
+                    <Button
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="end"
+                        android:id="@+id/ng_btn_add_item"
+                        android:text="Agregar Artículo"
+                        android:textStyle="normal"
+                        android:theme="@style/AddItemButtom" />
+
+                </LinearLayout>
+
+                <!-- Recycler Items delivery -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/ng_itemAddedDelivery"
+                    android:background="#fff"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

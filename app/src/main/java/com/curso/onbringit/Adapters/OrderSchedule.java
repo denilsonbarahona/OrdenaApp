@@ -26,19 +26,7 @@ public class OrderSchedule extends RecyclerView.Adapter<OrderSchedule.ScheduleHo
     public OrderSchedule(Context cntx)
     {
         this.context = cntx;
-        this.ScheduleOrders = new ArrayList<>();/*
-        this.ScheduleOrders.add(new String[]{"#1354678",
-                "Lugar de Compra: supermercado","Dirección de Entrega: Casa" ,
-                "Proxima Entrega: Mañana - 12:00" });
-        this.ScheduleOrders.add(new String[]{"#1354678",
-                "Lugar de Compra: supermercado","Dirección de Entrega: Casa" ,
-                "Proxima Entrega: Mañana - 12:00" });
-        this.ScheduleOrders.add(new String[]{"#1354678",
-                "Lugar de Compra: supermercado","Dirección de Entrega: Casa" ,
-                "Proxima Entrega: Mañana - 12:00" });
-        this.ScheduleOrders.add(new String[]{"#1354678",
-                "Lugar de Compra: supermercado","Dirección de Entrega: Casa" ,
-                "Proxima Entrega: Mañana - 12:00" }); */
+        this.ScheduleOrders = new ArrayList<>();
     }
 
     public void AddScheduleOrders(ArrayList<String[]> Schedule){
@@ -66,6 +54,7 @@ public class OrderSchedule extends RecyclerView.Adapter<OrderSchedule.ScheduleHo
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), EditScheduleActivity.class);
                 intent.putExtra("OrdenNumber",ScheduleOrders.get(position)[0]);
+                intent.putExtra("OrdenId",ScheduleOrders.get(position)[3]);
                 view.getContext().startActivity(intent);
             }
         });

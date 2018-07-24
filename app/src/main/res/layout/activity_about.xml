@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/ng_ArrowBack"
+                android:layout_width="50dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:id="@+id/ng_Header"
+                android:layout_width="0dp"
+                android:layout_weight="0.6"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:text="Sobre ORDENA"
+                android:textColor="#ffffff"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@drawable/ic_ordena"
+                android:id="@+id/ng_OnBringIt"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="140dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/ng_motto"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:textStyle="bold"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="center"
+                        android:textColor="@color/WhiteColor"
+                        android:text="ORDENA te da tiempo para que hagas lo que realmente importa."
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="100dp"
+                        android:layout_marginLeft="100dp"
+                        android:layout_below="@+id/ng_motto"
+                        android:layout_height="1px"
+                        android:background="@color/WhiteColor"></LinearLayout>
+
+                </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_heart"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="10dp" />
+
+
+                <TextView
+                    android:id="@+id/ng_greeting"
+                    android:layout_width="wrap_content"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textAlignment="center"
+                    android:textColor="@color/WhiteColor"
+                    android:text="Creada con mucho cariño en Tgu. Honduras."
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

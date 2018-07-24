@@ -3,8 +3,9 @@
     <item>
         <shape android:innerRadius="10dp"
             android:shape="oval">
-            <solid android:color="@color/fab_color_shadow"></solid>
-            <stroke android:width="2px" android:color="@color/colorAccentBar"/>
+            <solid android:color="@color/colorPrimary"></solid>
         </shape>
     </item>
+    <item android:drawable="@drawable/ic_add"
+        android:top="3sp" android:right="3sp" android:left="3sp" android:bottom="3sp"></item>
 </layer-list>

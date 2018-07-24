@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:paddingTop="15dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:text="¿ Desea cancelar este producto en la Orden ?"
+                android:textColor="#000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:minHeight="50dp"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/colorAccent"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="La cancelación de un producto se puede hacer solo cuando el estado esta 'En Espera.'"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="#831621"
+                android:layout_gravity="center"
+                android:id="@+id/ng_error_message"
+                android:layout_marginTop="15dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:text="No se puede realizar la cancelación del producto."
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/selector_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ng_cancelpop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:padding="15dp"
+                    android:text="NO"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ng_schedule_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="#fff"
+                    android:padding="15dp"
+                    android:text="SI"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

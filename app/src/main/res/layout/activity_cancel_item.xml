@@ -3,4 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/ng_toolbar"></include>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/ng_rvCancelItem"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+
 </LinearLayout>

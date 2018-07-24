@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <include layout="@layout/ng_toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/ng_select_image_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:id="@+id/ng_image_profile"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/ic_profile" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="15dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:id="@+id/ng_add_image_profile"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ng_add_image_profile" />
+
+                </FrameLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:layout_marginBottom="70dp"
+                android:orientation="vertical"
+                android:layout_below="@+id/ng_select_image_profile"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/ng_nameprofile"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:hint="Nombre y Apellido"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/MainEditText"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:inputType="number"
+                    android:id="@+id/ng_phoneprofile"
+                    android:hint="Número de Teléfono"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/MainEditText"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Email"
+                    android:id="@+id/ng_emailprofile"
+                    android:inputType="textEmailAddress"
+                    android:theme="@style/MainEditText"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

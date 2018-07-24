@@ -1,6 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:paddingTop="15dp"
+    android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:padding="5dp"
+                android:text="Cantidad"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:minHeight="50dp"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/ng_amount_plate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="0.4"
+                        android:text="Platos" />
+
+                    <EditText
+                        android:id="@+id/ng_amount_plate_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="0.3"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:hint="Cantidad"
+                        android:maxLength="3"
+                        android:textSize="13sp"
+                        android:theme="@style/MainEditText"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/ng_amount_kg"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="0.5"
+                        android:text="Kilogramos" />
+
+                    <EditText
+                        android:id="@+id/ng_amount_kg_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="0.3"
+                        android:hint="Cantidad"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textSize="13sp"
+                        android:theme="@style/MainEditText"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/ng_amount_pound"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="0.3"
+                        android:text="Libras" />
+
+                    <EditText
+                        android:id="@+id/ng_amount_pount_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="4dp"
+                        android:hint="Cantidad"
+                        android:layout_weight="0.3"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textSize="13sp"
+                        android:theme="@style/MainEditText" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/ng_amount_other"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="0.3"
+                        android:text="Otro" />
+
+                    <EditText
+                        android:id="@+id/ng_amount_other_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="0.6"
+                        android:hint="Ejem: 1 Media Libra"
+                        android:textSize="13sp"
+                        android:theme="@style/MainEditText"
+                        android:enabled="false" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/selector_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ng_cancelpop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:padding="15dp"
+                    android:text="CANCELAR"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ng_schedule_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:background="#fff"
+                    android:padding="15dp"
+                    android:text="ACEPTAR"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

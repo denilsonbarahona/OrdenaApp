@@ -1,6 +1,5 @@
 package com.curso.onbringit.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,19 +12,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.curso.onbringit.Adapters.OrderSchedule;
+import com.curso.onbringit.Model.ApiRequest;
 import com.curso.onbringit.R;
 
 /**
  * Created by PC-PRAF on 3/9/2017.
  */
 
-public class EditScheduleActivity extends AppCompatActivity
+public class ScheduleListActivity extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_schedule);
+        setContentView(R.layout.activity_schedule_list);
+
+        ApiRequest apiRequest = new ApiRequest(this.getApplicationContext());
 
         RecyclerView rvScheduleList = (RecyclerView) findViewById(R.id.rv_ScheduleList);
         OrderSchedule ScheduleOrders = new OrderSchedule(this.getApplicationContext());
@@ -34,6 +36,7 @@ public class EditScheduleActivity extends AppCompatActivity
         rvScheduleList.setAdapter(ScheduleOrders);
         rvScheduleList.setLayoutManager(linearLayoutManager);
 
+        apiRequest.get_scheduleOrders(ScheduleOrders);
         ToolbarConfiguration();
     }
 

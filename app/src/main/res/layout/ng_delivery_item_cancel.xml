@@ -1,6 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/selectable_item_background"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.85"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginBottom="1.5dp"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/ng_ItemD"
+                    android:layout_width="0dp"
+                    android:text="1. Nombre del Artículo"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/primary_text"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"/>
+
+                <TextView
+                    android:id="@+id/ng_ItemsLenght"
+                    android:layout_width="0dp"
+                    android:text=" Cantidad: 5 Libras "
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:ellipsize="end"
+                    android:textColor="@color/secondary_text"
+                    android:maxLines="1"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="13dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="1.5dp"
+                android:id="@+id/ng_itemAdress"
+                android:fontFamily="sans-serif"
+                android:ellipsize="end"
+                android:textColor="@color/secondary_text"
+                android:maxLines="1"
+                android:text="Dirección de la Compra"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/ng_ItemAttached"
+                android:layout_width="match_parent"
+                android:paddingLeft="11dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginBottom="1.5dp"
+                android:text="--"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingLeft="13dp"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:id="@+id/ng_itemNote"
+                android:fontFamily="sans-serif"
+                android:ellipsize="end"
+                android:layout_marginBottom="1.5dp"
+                android:textColor="@color/colorAccent"
+                android:maxLines="1"
+                android:text="Nota de la Compra"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@drawable/selectable_item_background"
+            android:layout_width="0dp"
+            android:layout_weight="0.2"
+            android:id="@+id/ng_lyActions"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ng_Delete"
+                android:layout_marginLeft="5dp"
+                android:layout_width="40dp"
+                android:maxWidth="50dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_delete"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#d5d5d5"
+        android:layout_height="1px"></LinearLayout>
+
 
 </LinearLayout>

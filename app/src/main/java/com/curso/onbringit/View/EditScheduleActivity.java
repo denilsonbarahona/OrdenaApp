@@ -17,7 +17,6 @@ import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.curso.onbringit.Model.ApiRequest;
 import com.curso.onbringit.R;
 import com.jaredrummler.materialspinner.MaterialSpinner;
@@ -26,18 +25,20 @@ import com.jaredrummler.materialspinner.MaterialSpinner;
  * Created by PC-PRAF on 3/9/2017.
  */
 
-public class EditarScheduleActivity extends AppCompatActivity
+public class EditScheduleActivity extends AppCompatActivity
 {
 
-    private MaterialSpinner  ng_scheduleSpinner;
+    private MaterialSpinner ng_scheduleSpinner;
     private EditText ng_delivery_to;
     private EditText ng_phone_number;
-    private String ScheduleSelected="";
-    private Boolean OwnSchedule=false;
-    public static int ScheduleOption=0;
+    private String ScheduleSelected = "";
+    private Boolean OwnSchedule = false;
+    public static int ScheduleOption = 0;
     public static int NumberDaysOwn;
     private TextView ng_Address;
     private TextView ng_infodelivery;
+    public static int AddressApiID;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +65,8 @@ public class EditarScheduleActivity extends AppCompatActivity
 
 
         ApiRequest apiRequest = new ApiRequest(this.getApplicationContext());
-        apiRequest.get_schedule_info(ng_delivery_to,ng_phone_number , ng_scheduleSpinner , ng_Address , ng_infodelivery);
+        apiRequest.get_schedule_info(  ng_delivery_to  ,ng_phone_number , ng_scheduleSpinner , ng_Address ,
+                                       ng_infodelivery ,getIntent().getStringExtra("OrdenId")  );
 
         ng_scheduleSpinner.setOnClickListener(new View.OnClickListener() {
 
@@ -92,8 +94,8 @@ public class EditarScheduleActivity extends AppCompatActivity
                             ng_rbMonthly.setChecked(false);
                             ng_weeks.setEnabled(false);
                             ScheduleOption = 1;
-                            EditarScheduleActivity.this.ScheduleSelected = ng_rbDaily.getText().toString();
-                            EditarScheduleActivity.this.OwnSchedule = false;
+                            EditScheduleActivity.this.ScheduleSelected = ng_rbDaily.getText().toString();
+                            EditScheduleActivity.this.OwnSchedule = false;
                         }
                     }
                 });
@@ -107,8 +109,8 @@ public class EditarScheduleActivity extends AppCompatActivity
                             ng_rbDaily.setChecked(false);
                             ng_weeks.setEnabled(false);
                             ScheduleOption = 2;
-                            EditarScheduleActivity.this.ScheduleSelected = ng_rbWeekly.getText().toString();
-                            EditarScheduleActivity.this.OwnSchedule = false;
+                            EditScheduleActivity.this.ScheduleSelected = ng_rbWeekly.getText().toString();
+                            EditScheduleActivity.this.OwnSchedule = false;
                         }
                     }
                 });
@@ -122,8 +124,8 @@ public class EditarScheduleActivity extends AppCompatActivity
                             ng_rbWeekly.setChecked(false);
                             ng_weeks.setEnabled(false);
                             ScheduleOption = 3;
-                            EditarScheduleActivity.this.ScheduleSelected = ng_rbMonthly.getText().toString();
-                            EditarScheduleActivity.this.OwnSchedule = false;
+                            EditScheduleActivity.this.ScheduleSelected = ng_rbMonthly.getText().toString();
+                            EditScheduleActivity.this.OwnSchedule = false;
                         }
                     }
                 });
@@ -140,10 +142,10 @@ public class EditarScheduleActivity extends AppCompatActivity
                             ng_rbMonthly.setSelected(false);
                             ng_rbMonthly.setChecked(false);
                             ScheduleOption = 4;
-                            EditarScheduleActivity.this.OwnSchedule = true;
+                            EditScheduleActivity.this.OwnSchedule = true;
                         }else{
                             ng_weeks.setEnabled(false);
-                            EditarScheduleActivity.this.OwnSchedule = false;
+                            EditScheduleActivity.this.OwnSchedule = false;
                         }
                     }
                 });
@@ -155,8 +157,8 @@ public class EditarScheduleActivity extends AppCompatActivity
 
                 WindowManager.LayoutParams LP = new WindowManager.LayoutParams();
                 LP.copyFrom(dialog.getWindow().getAttributes());
-                LP.width  = (int)(( mwidth / 2 ) * 1.6);
-                LP.height = (int)(( mheight /2 ) * 1 );
+                LP.width  = (int)(( mwidth / 2 ) * 1.8);
+                LP.height = (int)(( mheight /2 ) * 1.2 );
 
                 TextView ng_CancelPop = (TextView) v.findViewById(R.id.ng_cancelpop);
                 TextView ng_Selected = (TextView) v.findViewById(R.id.ng_schedule_selected);
@@ -165,7 +167,7 @@ public class EditarScheduleActivity extends AppCompatActivity
                     @Override
                     public void onClick(View view) {
                         if(ScheduleOption!=0){
-                            if(EditarScheduleActivity.this.OwnSchedule){
+                            if(EditScheduleActivity.this.OwnSchedule){
                                 if(ng_weeks.getText().toString().trim().length()>0){
                                     ng_scheduleSpinner.setText("Cada "+ng_weeks.getText().toString() +" Semanas");
                                     NumberDaysOwn = Integer.parseInt( ng_weeks.getText().toString());
@@ -174,10 +176,10 @@ public class EditarScheduleActivity extends AppCompatActivity
                                     Toast.makeText(getApplicationContext(),"Indique la cantidad de semanas",Toast.LENGTH_LONG).show();
                                 }
                             }else{
-                                ng_scheduleSpinner.setText(EditarScheduleActivity.this.ScheduleSelected);
+                                ng_scheduleSpinner.setText(EditScheduleActivity.this.ScheduleSelected);
                                 dialog.cancel();
                             }
-                            EditarScheduleActivity.this.OwnSchedule=false;
+                            EditScheduleActivity.this.OwnSchedule=false;
                         }else{
                             Toast.makeText(getApplicationContext(),"seleccione una opción",Toast.LENGTH_LONG).show();
                         }
@@ -204,6 +206,7 @@ public class EditarScheduleActivity extends AppCompatActivity
         if(intent.getStringExtra("AddressName")!= null){
             ng_Address.setText(intent.getStringExtra("AddressName"));
             ng_infodelivery.setText(intent.getStringExtra("Address"));
+            AddressApiID = Integer.parseInt(intent.getStringExtra("AddressId"));
         }
     }
 
@@ -214,7 +217,7 @@ public class EditarScheduleActivity extends AppCompatActivity
         ImageView ArrowBack = (ImageView)findViewById(R.id.ng_ArrowBack);
         TextView textView = (TextView)findViewById(R.id.ng_Header);
         RelativeLayout NextStep = (RelativeLayout) findViewById(R.id.ng_NextStep);
-        textView.setText("Orden "+getIntent().getStringExtra("OrdenNumber"));
+        textView.setText("Orden Número # "+getIntent().getStringExtra("OrdenNumber"));
         NextStep.setVisibility(View.VISIBLE);
         ArrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,8 +228,29 @@ public class EditarScheduleActivity extends AppCompatActivity
         NextStep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+            int daysSchedule = 0;
+            switch (ScheduleOption){
+                case 1: daysSchedule = ScheduleOption;
+                    break;
+                case 2: daysSchedule = 7;
+                    break;
+                case 3: daysSchedule = 30;
+                    break;
+                case 4: daysSchedule = NumberDaysOwn *7;
+                    break;
+
+            }
+
+            String deliveryInformation = " { \"schedule\": \"" + String.valueOf(daysSchedule)+"\" , "      +
+                                         "   \"delivery_to\": \""+ ng_delivery_to.getText().toString()+"\" ,"+
+                                         "   \"phone_to\": \""+ ng_phone_number.getText().toString()+"\" ,"   +
+                                         "   \"AddressID\":  \""+ String.valueOf(AddressApiID)+"\" }";
+
             Intent intent = new Intent(view.getContext() , ItemScheduleActivity.class);
             intent.putExtra("OrdenNumber",getIntent().getStringExtra("OrdenNumber"));
+            intent.putExtra("OrdenId" , getIntent().getStringExtra("OrdenId"));
+            intent.putExtra("info_delivery" , deliveryInformation);
             view.getContext().startActivity(intent);
             }
         });
